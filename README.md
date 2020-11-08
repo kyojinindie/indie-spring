@@ -2,7 +2,7 @@
 
 ![Image of KyojinIndie](https://github.com/kyojinindie/indie-spring/blob/main/kyojinIndie.png)
 
-This repository contains a brief overview about Java8 featurs and characteristics.
+This repository contains a brief overview about Spring featurs and characteristics.
 
 ## Spring
 
