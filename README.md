@@ -14,7 +14,7 @@ Is a tool that help you to configure your project an esaier way.
 
 ## Dependency Injection
 
-Whe we create Java applications, we have several classes and objects, sometimes we have dependencies between this objects.
+When we create Java applications, we have several classes and objects, sometimes we have dependencies between this objects.
 For example:
 If we have an object to access a data base and other that requires do logical bussines, this object depends to data base information to access data to do its logic.
 If we arent working with spring we need to create an object and later create the other and asing references by manual way, on the constructor or setter method.
