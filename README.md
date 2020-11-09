@@ -56,6 +56,45 @@ Let review some characteristics for dependency injection:
 7.- Spring's container will manage the life cycle of beans.
     When we register an object into spring this objects will have something called scope or life cycle,Spring define for me this scope, the only thing that i need to define is the scope type, so Spring do all work for me.
 
+
+## Types of dependency injection.
+
+There are differents types for dependency injection, this types of dependency injection will define how can i do the dependency injection.
+
+Spring provides 3 posibilities to do that, by constructor, by setter method and class attributes.
+
+### Injection by atribute
+
+Imagin that you have to classes Person and Address if you are not working with spring, normaly you need to intanciate the objecto for use them, so you will have something like this:
+
+
+```java
+ Address address = new Address("894567", "somewhere");	
+ Person person = new Person("Erick", 31, address);
+```
+ 
+But with Spring dependency injection by attribute the only thing that you need to do is register your classes into Spring's container:
+
+```java
+@Component
+public class Person {
+```
+
+After that Spring will manage this objects and you wont have to instanciate them, so you will have access trhoguh the Spring' context.
+
+```java
+ ConfigurableApplicationContext context = SpringApplication.run(DependencyInjectionApplication.class, args);
+		
+ Person person = context.getBean(Person.class);
+		
+```
+
+When we talk about the Spring's context we are talking about the place where Spring's objects lives.
+When i start a Spring application the return value of this application is a Spring contexte, there are multiples interface that we can use for work with Spring context.
+
+Look at the source code for full example.
+
+
 This is a open source project.
 
 Open source is a development methodology; free software is a social movement.
