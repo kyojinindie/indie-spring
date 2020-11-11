@@ -103,6 +103,20 @@ For setter injection Spring's container asing dependencies using setter methods.
 
 Look at the source code for full example.
 
+## Stereotypes
+
+Allow indicate to Spring that It needs to manage objects of the annotated class, there are 4 main types:
+
+Annotation | Description
+------------ | -------------
+@Component | This is the most general stereotype, It is father of the others 3 stereotypes.
+@Service | This stereotype is for execute bussiness logic.
+@Repository | This stereotype is for access data.
+@Controller | This stereotype is for expose date.
+
+Stereotypes allow give a role to classes that will be managed by spring, EachOne has same behavior and apply only to implementation.
+
+
 
 This is an open source project.
 
