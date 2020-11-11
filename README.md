@@ -92,6 +92,15 @@ After that Spring will manage these objects and you wont have to instantiate the
 When we talk about the Spring's context we are talking about the place where Spring's objects lives.
 When i start a Spring application the return value of this application is a Spring context, there are multiples interfaces that we can use to work with Spring context.
 
+### Injection by constructor
+
+In this case Spring's container is in charge to invoke class contructor passing arguments as dependencies.
+
+### Injection by setter
+
+For setter injection Spring's container asing dependencies using setter methods. Is recomended for optional dependencies.
+
+
 Look at the source code for full example.
 
 
