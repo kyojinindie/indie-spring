@@ -116,8 +116,29 @@ Annotation | Description
 
 Stereotypes allow give a role to classes that will be managed by spring, EachOne has same behavior and apply only to implementation.
 
+## Qualifiers
 
+In case that we have an interface with multiples implementations we can use @Qualifier annotation to specify wich bean we want inject.
 
+For example:
+
+```java
+Interface SoccerPlayer {
+}
+
+@Componet
+@Qualifier("forward")
+public class Forward  implements SoccerPlayer{}
+
+@Component
+@Qualifier("defender")
+public class Defender implemets SoccerPlayer{}
+
+@Component
+@Qualifier("midfielder")
+public class Midfilder implements SoccerPlayer{}
+```
+Look at the source code for full example.
 This is an open source project.
 
 Open source is a development methodology; free software is a social movement.
