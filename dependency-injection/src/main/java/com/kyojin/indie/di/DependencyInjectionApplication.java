@@ -12,6 +12,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 
 import com.kyojin.indie.di.attribute.Person;
 import com.kyojin.indie.di.constructor.PersonC;
+import com.kyojin.indie.di.setter.PersonS;
 
 @SpringBootApplication
 public class DependencyInjectionApplication {
@@ -33,9 +34,13 @@ public class DependencyInjectionApplication {
 		
 		PersonC personC = context.getBean(PersonC.class);
 		
+		PersonS personS = context.getBean(PersonS.class);
+		
 		System.out.println(person.toString());
 		
 		System.out.println(personC.toString());
+		
+		System.out.println(personS.toString());
 	}
 
 }
