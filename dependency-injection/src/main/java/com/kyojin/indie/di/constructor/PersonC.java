@@ -1,4 +1,4 @@
-package com.kyojin.indie.di.attribute;
+package com.kyojin.indie.di.constructor;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -10,23 +10,16 @@ import org.springframework.stereotype.Component;
  * Author: Erick Roberto Medina Lavielle
  * */
 @Component
-public class Person {
+public class PersonC {
 	
-	@Value("Erick")
+	
 	private String name;
-	
-	@Value("31")
 	private int age;
 	
+	private AddressC address;
+
 	@Autowired
-	private Address address;
-	
-	public Person() {
-		super();
-	}
-
-
-	public Person(String name, int age, Address address) {
+	public PersonC(@Value("Erick") String name,@Value("31") int age, AddressC address) {
 		super();
 		this.name = name;
 		this.age = age;
@@ -51,19 +44,19 @@ public class Person {
 	
 	
 
-	public Address getAddress() {
+	public AddressC getAddress() {
 		return address;
 	}
 
 
-	public void setAddress(Address address) {
+	public void setAddress(AddressC address) {
 		this.address = address;
 	}
 
 
 	@Override
 	public String toString() {
-		return "Person by attribute [name=" + name + ", age=" + age + ", address=" + address + "]";
+		return "Person by constructor [name=" + name + ", age=" + age + ", address=" + address + "]";
 	}
 
 

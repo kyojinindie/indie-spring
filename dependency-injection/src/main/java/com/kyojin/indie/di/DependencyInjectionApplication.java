@@ -11,6 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
 import com.kyojin.indie.di.attribute.Person;
+import com.kyojin.indie.di.constructor.PersonC;
 
 @SpringBootApplication
 public class DependencyInjectionApplication {
@@ -30,7 +31,11 @@ public class DependencyInjectionApplication {
 		
 		Person person = context.getBean(Person.class);
 		
+		PersonC personC = context.getBean(PersonC.class);
+		
 		System.out.println(person.toString());
+		
+		System.out.println(personC.toString());
 	}
 
 }
