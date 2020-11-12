@@ -145,6 +145,56 @@ This is an open source project.
 
 This annotation is used to define a default bean when an interface is implemente by multiples classes.
 
+## Profile configuration
+
+Profiles are used to register beans into Spring's context according to a condition, for example:
+
+-OS
+-Enviroments-
+-Countries
+
+And so on.
+
+Then wich is the difference between @Qualifier and @Profile?
+
+The main difference between these annotations is that @Qualifier is used to eliminate ambiguity between beans and @Profile annotation provide a way to segregate parts of your application and make it available only in certain enviroment.
+
+```java
+Interface OperationSystem {
+}
+
+@Service
+@Profile("windows")
+public class Windows implements OperationSystem {}
+
+@@Service
+@Profile("mac")
+public class Mac implements OperationSystem {}
+
+@Service
+@Profile("linux")
+public class Linux implements OperationSystem {}
+```
+
+Once profiles are defined, next step is activate them.
+
+To do this we have 3 options:
+
+1.- Adding this line `spring.profiles.active=linux` into properties file.
+2.-Defining following property `-Dspring.profiles.active=linux` in the VM.
+3.-Annotating a test like this `@ActivateProfiles("linux")`.
+
+If we want register a bean in case that there isn't defined a profile, is posible define a default profile as following shows:
+
+```java
+@Service
+@Profile({"windows","default"})
+public class Windows implements OperationSystem {
+```
+Look at the source code for full example, feel free to play with properties file.
+This is an open source project.
+
+
 Open source is a development methodology; free software is a social movement.
 
 Happy Hacking :)
