@@ -141,6 +141,10 @@ public class Midfilder implements SoccerPlayer{}
 Look at the source code for full example.
 This is an open source project.
 
+@Primary
+
+This annotation is used to define a default bean when an interface is implemente by multiples classes.
+
 Open source is a development methodology; free software is a social movement.
 
 Happy Hacking :)
