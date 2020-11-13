@@ -233,14 +233,24 @@ public interface Greeting {
 
 @Component
 public class Mexico implements Greeting{
-	@Override
+   @Override
    public void greeting() {}
 }
 
 @Component
 public class Usa implements Greeting{
-	@Override
+   @Override
    public void greeting() {}
+}
+
+@Component
+public class ShowGreeting {	
+   @Autowired
+   List<Greeting> greetings;
+   
+   public void showGreetings() {
+     greetings.forEach(g -> g.greeting());
+   }
 }
 ```
 Look at source code for full example.
