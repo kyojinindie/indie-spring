@@ -222,6 +222,28 @@ public String getKyojinIndie() {
 }
 ```
 
+## Injection of multipe objects
+
+Spring allow inject multiple objects with @Autowired annotation.
+
+```java
+public interface Greeting {
+   public void greeting();
+}
+
+@Component
+public class Mexico implements Greeting{
+	@Override
+   public void greeting() {}
+}
+
+@Component
+public class Usa implements Greeting{
+	@Override
+   public void greeting() {}
+}
+```
+Look at source code for full example.
 This is an open source project.
 
 
