@@ -215,6 +215,12 @@ What happen if i don't have access to source code to add these annotations?
 
 For this cases exist explicit bean declaration.
 
+```java
+@Bean
+public String getKyojinIndie() {
+   return "<kyojin,indie/>";
+}
+```
 
 This is an open source project.
 
