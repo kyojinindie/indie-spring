@@ -207,6 +207,15 @@ Create only one bean instance by Spring's container, this is default scope.
 Create a bean instance everytime that is required.
 
 See at the source code for the example.
+
+## Explicit bean declaration
+
+When we declarate a bean with annotations like @Component, @Service, etc. We are declaring a bean implicitly.
+What happen if i don't have access to source code to add these annotations?
+
+For this cases exist explicit bean declaration.
+
+
 This is an open source project.
 
 
