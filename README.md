@@ -192,6 +192,21 @@ If we want register a bean in case that there isn't defined a profile, is posibl
 public class Windows implements OperationSystem {
 ```
 Look at the source code for full example, feel free to play with properties file.
+
+## Scope
+
+Scope is the life time that bean has.
+In this part we are reviewing Singleton and Prototype scopes.
+
+### Singleton
+
+Create only one bean instance by Spring's container, this is default scope.
+
+### Prototype
+
+Create a bean instance everytime that is required.
+
+See at the source code for the example.
 This is an open source project.
 
 
