@@ -254,6 +254,39 @@ public class ShowGreeting {
 }
 ```
 Look at source code for full example.
+## @SpringBootApplication
+
+Is equivalent to define following annotations:
+
+@Configuration
+@ComponentScan
+@EnableAutoConfiguration
+
+## Load properties
+
+Is very common in an Spring application perform load properties through properties file as following example:
+
+```java
+@Component
+public class KyojinIndie {
+	
+	@Value("${kyojinIndie.author}")
+	private String author;
+}
+
+@Configuration
+@PropertySource("classpath:kyojinIndie.properties")
+public class KyojinIndieConfiguration {
+
+	@Bean
+	public PropertySourcesPlaceholderConfigurer loadProperties() {
+		return new PropertySourcesPlaceholderConfigurer();
+	}
+}
+kyojinIndie.properties (propertier file)
+kyojinIndie.author=Erick_Lavielle
+```
+Look at source code for full example.
 This is an open source project.
 
 
