@@ -287,6 +287,49 @@ kyojinIndie.properties (propertier file)
 kyojinIndie.author=Erick_Lavielle
 ```
 Look at source code for full example.
+
+## Aware Interfaces
+
+Allow to receive Spring's events.
+
+### BeanNameAware
+
+```java
+@Component
+public class LifeCycleBean implements BeanNameAware {
+
+@Override
+public void setBeanName(String name) {}
+```
+
+Look at source code for full example.
+
+## CallBacks @PostConstruct, @PreDestroy
+
+Are executed once a bean has been built and before the bean be destroyed.
+
+### Rules
+
+-The methods that apply callbacks can have any acces modifier but they couldn't receive arguments and their return value must be void.
+
+-If a bean is created by explicit way, callBacks can be defined as:
+
+```java
+@Bean(initMethod = "init", destroyMethod = "destroy")
+public ExplicitBean getExplicitBean() {
+	return new ExplicitBean();
+}
+```
+
+-Methods annotated with @PostConstruct are executed after dependency injection.
+
+-Methods annotated with @PreDestroy are excuted before bean be destroyed.
+
+-@PreDestroy don't be executed for Prototype Beans.
+
+-Methods annotated with @PreDestroy only are executed when JVM has been closed propertly.
+
+Look at source code for full example.
 This is an open source project.
 
 
